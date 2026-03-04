@@ -34,7 +34,7 @@ map.on('load', () => {
     // Add a data source containing GeoJSON data
     map.addSource('Restaurants-Data', {
         'type': 'geojson',
-        'url': 'https://JananChen.github.io/GGR472Lab3/data/restaurants.geojson' // Add restaurants point data source path
+        'url': 'https://github.com/JananChen/GGR472Lab3/blob/main/data/restaurants.geojson' // Add restaurants point data source path
     });
 // 2. VISUALIZE DATA LAYERS
     map.addLayer({
@@ -142,6 +142,7 @@ document.getElementById("Starsset").addEventListener('change',(e) => {
     }
 
 });
+
 
 
 
