@@ -1,5 +1,5 @@
 ## GGR472 Lab 3
-This repository contains resources to help students learn about using JavaScript to build a more dynamic legend, and to use HTML elements, events, and Mapbox methods for map interactivity.
+This repository contains files which create a webmap that shows points of restaurants around my walking area, along with the star ratings of the restaurants, along with a legend and a filter.
 
 ## Repository Contents
 
