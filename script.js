@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2hlbmphbmEiLCJhIjoiY21rNGdpc3BoMDdiNzNlb3Yxbm02dGpwOCJ9.xYpWe_CkRr_Oe_Q-DtaVYw'; //***ADD YOUR ACCESS TOKEN HERE***
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2hlbmphbmEiLCJhIjoiY21rNGdpc3BoMDdiNzNlb3Yxbm02dGpwOCJ9.xYpWe_CkRr_Oe_Q-DtaVYw'; // Mapbox access token
 
 const map = new mapboxgl.Map({
     container: 'my-map',
@@ -8,9 +8,9 @@ const map = new mapboxgl.Map({
             theme: "monochrome"
         }
     },
-    center: [-79.4133, 43.7725],
+    center: [-79.4133, 43.7725], // Coordinates for the map
     zoom: 12,
-    minZoom: 6
+    minZoom: 6 // Furthest out that the map can zoom to ensure the target area is visible
 });
 
 /*--------------------------------------------------------------------
@@ -45,13 +45,13 @@ map.on('load', () => {
             'circle-radius': 8, // Set radius of restaurant points
             'circle-color': [
                 'step',
-                ['get', 'Stars'],
-                '#fd3c3c',
-                2, '#fc972a',
-                3, '#e3e01a',
-                4, '#adbd00',
-                5, '#008015'
-            ] // Set colour of restaurant points depending on their stars
+                ['get', 'Stars'], // Set colour of restaurant points depending on their stars
+                '#fd3c3c',      // red for 1 star restarants
+                2, '#fc972a',   // orange for 2 star restaurants
+                3, '#e3e01a',   // yellow for 3 star restaurants
+                4, '#adbd00',   // light green for 4 star restaurants
+                5, '#008015'    // dark green for 5 star restaurants
+            ] 
         }
     });
 
@@ -61,11 +61,11 @@ CREATE LEGEND IN JAVASCRIPT
 --------------------------------------------------------------------*/
 // Declare array variables for labels and colours
 const legenditems = [
-    { label: '1', colour: '#fd3c3c' },
-    { label: '2', colour: '#fc972a' },
-    { label: '3', colour: '#e3e01a' },
-    { label: '4', colour: '#adbd00' },
-    { label: '5', colour: '#008015' }
+    { label: '1', colour: '#fd3c3c' }, // red for 1 star restarants
+    { label: '2', colour: '#fc972a' }, // orange for 2 star restaurants
+    { label: '3', colour: '#e3e01a' }, // yellow for 3 star restaurants
+    { label: '4', colour: '#adbd00' }, // light green for 4 star restaurants
+    { label: '5', colour: '#008015' } // dark green for 5 star restaurants
 ];
 
 // For each array item create a row to put the label and colour in
@@ -88,25 +88,25 @@ ADD INTERACTIVITY BASED ON HTML EVENT
 --------------------------------------------------------------------*/
 
 // 1) Add event listener which returns map view to full screen on button click using flyTo method
-document.getElementById('returnbutton').addEventListener('click', () => {
+document.getElementById('returnbutton').addEventListener('click', () => { // Button that is triggered by a click
     map.flyTo({
-        center: [-79.4133, 43.7725],
-        zoom: 12,
+        center: [-79.4133, 43.7725], // Clicking the button moves to these coordinates
+        zoom: 12, // Clicking the button returns the zoom to 12
         essential: true
     });
 });
 
 
 // 2) Change display of legend based on check box
-let legendcheck = document.getElementById('legendcheck');
+let legendcheck = document.getElementById('legendcheck'); // Create variable for a button that can be checked
 
-legendcheck.addEventListener('click', () => {
+legendcheck.addEventListener('click', () => { // Button that is triggered by a click
     if (legendcheck.checked) {
-        legendcheck.checked = true;
-        legend.style.display = 'block';
+        legendcheck.checked = true; // Check if the legendcheck variable is true
+        legend.style.display = 'block'; // If the legendcheck variable is true, hide the legend
     }
     else {
-        legend.style.display = "none";
+        legend.style.display = "none"; // Reveal the legend
         legendcheck.checked = false;
     }
 });
@@ -142,9 +142,6 @@ document.getElementById("Starsset").addEventListener('change',(e) => {
     }
 
 });
-
-
-
 
 
 
