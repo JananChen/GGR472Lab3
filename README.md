@@ -6,5 +6,6 @@ This repository contains files which create a webmap that shows points of restau
 - `index.html`: HTML file to render the map and elements including navigation controls, checkboxes, and a dropdown
 - `style.css`: CSS file for positioning the map interface and elements
 - `script.js`: JavaScript file containing code for adding interactivity with map data layers based on HTML element events
-
+- `restaurants.geojson`: geojson file containing point data for the restaurants including their stars
+  
 #Link to the website: https://jananchen.github.io/GGR472Lab3/
